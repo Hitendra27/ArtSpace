@@ -25,5 +25,30 @@
     <string name="art_5_artist">Frans Hals</string>
     <string name="art_5_year">1624</string>
     <string name="art_5_location">Wallace Collection, London, UK</string>
+
+    <string name="art_6_name">Self-Portrait</string>
+    <string name="art_6_artist">Rembrandt van Rijn</string>
+    <string name="art_6_year">1660</string>
+    <string name="art_6_location">Metropolitan Museum of Art, New York City</string>
+
+    <string name="art_7_name">Girl with a Pearl Earring</string>
+    <string name="art_7_artist">Johannes Vermeer</string>
+    <string name="art_7_year">1665</string>
+    <string name="art_7_location">Mauritshuis, The Hague</string>
+
+    <string name="art_8_name">Portrait of Adele Bloch Bauer I</string>
+    <string name="art_8_artist">Gustav Klimt</string>
+    <string name="art_8_year">1907</string>
+    <string name="art_8_location">Neue Galerie, New York City</string>
+
+    <string name="art_9_name">Portrait of Madame X</string>
+    <string name="art_9_artist">John Singer Sargent</string>
+    <string name="art_9_year">1884</string>
+    <string name="art_9_location">Metropolitan Museum of Art, New York City</string>
+
+    <string name="art_10_name">Le Réve</string>
+    <string name="art_10_artist">Pablo Picasso</string>
+    <string name="art_10_year">1932</string>
+    <string name="art_10_location">Private collection</string>
     
 </resources>
