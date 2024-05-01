@@ -1,24 +1,29 @@
 <resources>
     <string name="app_name">ArtSpace</string>
     
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
+    <string name="art_1_name">Mona Lisa</string>
+    <string name="art_1_artist">Leonardo Da Vinci</string>
+    <string name="art_1_year">1506</string>
+    <string name="art_1_location">Louvre Museum, Paris, France</string>
 
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
+    <string name="art_2_name">Portrait of Dr. Gachet</string>
+    <string name="art_2_artist">Vincent van Gogh</string>
+    <string name="art_2_year">1890</string>
+    <string name="art_2_location>Musée d’Orsay, Paris, France</string>
 
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
+    <string name="art_3_name">Napoleon Crossing the Alps</string>
+    <string name="art_3_artist">Jacques-Louis David</string>
+    <string name="art_3_year">1801</string>
+    <string name="art_3_location">Château de Malmaison, Rueil-Malmaison, France</string>
 
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
+    <string name="art_4_name">American Gothic</string>
+    <string name="art_4_artist">Grant Wood</string>
+    <string name="art_4_year">1930</string>
+    <string name="art_4_location">Art Institute of Chicago, Chicago, USA</string>
 
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
-    <string name="art_1_name"></string>
+    <string name="art_5_name">The Laughing Cavalier</string>
+    <string name="art_5_artist">Frans Hals</string>
+    <string name="art_5_year">1624</string>
+    <string name="art_5_location">Wallace Collection, London, UK</string>
     
 </resources>
