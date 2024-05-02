@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ArtSpace</string>
+    <string name="previous_button">Previous</string>
+    <string name="next_button">Next</string>
     
     <string name="art_1_name">Mona Lisa</string>
     <string name="art_1_artist">Leonardo Da Vinci</string>
