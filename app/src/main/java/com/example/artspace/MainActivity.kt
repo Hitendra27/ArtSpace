@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.BlendMode.Companion.Color
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.artspace.ui.theme.ArtSpaceTheme
@@ -47,8 +48,19 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ArtSpaceApp() {
-    ArtSpaceImageAndDescription(
-        imagePainter = painterResource(R.drawable.monalisa))
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        ArtSpaceImageAndDescription(
+            imagePainter = painterResource(R.drawable.monalisa)
+        )
+        Artist(
+            artName = stringResource(R.string.art_1_name),
+            artist = stringResource(R.string.art_1_artist),
+            artYear = stringResource(R.string.art_1_year)
+        )
+    }
 }
 
 @Composable
@@ -61,13 +73,12 @@ fun ArtSpaceImageAndDescription(
     Surface(
         modifier = Modifier
             .height(50.dp)
-            .width(100.dp)
+            .width(50.dp)
             .padding(1.dp),
-        color = Color(0xFF0C0C0C),
+        color = Color(0xFF585656),
         //border = BorderStroke(),
-        tonalElevation = 40.dp,
+        tonalElevation = 5.dp,
         shadowElevation = 5.dp,
-        //elevation = 40.dp,
         shape = RoundedCornerShape(20.dp)
     ) {
         Column(
@@ -81,6 +92,23 @@ fun ArtSpaceImageAndDescription(
                     .size(450.dp)
             )
         }
+    }
+}
+
+@Composable
+fun Artist(
+    artName: String,
+    artist: String,
+    artYear: String,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = artName)
+        Text(text = artist)
+        Text(text = artYear)
     }
 }
 
