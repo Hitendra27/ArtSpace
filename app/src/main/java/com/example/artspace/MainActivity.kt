@@ -49,7 +49,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ArtSpaceApp() {
     Column(
-        verticalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .fillMaxSize(),
+       verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         ArtSpaceImageAndDescription(
@@ -72,14 +74,14 @@ fun ArtSpaceImageAndDescription(
 ) {
     Surface(
         modifier = Modifier
-            .height(50.dp)
-            .width(50.dp)
-            .padding(1.dp),
+            .height(420.dp)
+            .width(320.dp)
+            .padding(5.dp),
         color = Color(0xFF585656),
         //border = BorderStroke(),
         tonalElevation = 5.dp,
         shadowElevation = 5.dp,
-        shape = RoundedCornerShape(20.dp)
+        //shape = RoundedCornerShape(20.dp)
     ) {
         Column(
             verticalArrangement = Arrangement.Center,
@@ -89,7 +91,7 @@ fun ArtSpaceImageAndDescription(
                 painter = imagePainter,
                 contentDescription = null,
                 modifier = Modifier
-                    .size(450.dp)
+                    .size(350.dp)
             )
         }
     }
@@ -116,6 +118,6 @@ fun Artist(
 @Composable
 fun GreetingPreview() {
     ArtSpaceTheme {
-        ArtSpaceImageAndDescription(imagePainter = painterResource(R.drawable.monalisa))
+        ArtSpaceApp()
     }
 }
