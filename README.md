@@ -31,6 +31,7 @@ To get started with the Art Space App:
 4. Explore the app and immerse yourself in the world of art!
 
 ## Screenshots
+<img width="407" alt="Screenshot 2024-05-21 at 21 53 56" src="https://github.com/Hitendra27/ArtSpace/assets/73651340/d38ad4df-7093-4618-9d82-f1efd8b0bbae">
 
 
 ## Contributing
