@@ -21,6 +21,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.BlendMode.Companion.Color
@@ -49,24 +50,31 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun ArtSpaceApp(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier
-            .fillMaxSize(),
-       verticalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         ArtSpaceImageAndDescription(
             imagePainter = painterResource(R.drawable.monalisa)
         )
-        Spacer(modifier = Modifier.height(100.dp))
+        Spacer(modifier = Modifier.height(50.dp))
         Artist(
+            modifier = Modifier.padding(bottom = 40.dp),
             artName = stringResource(R.string.art_1_name),
             artist = stringResource(R.string.art_1_artist),
             artYear = stringResource(R.string.art_1_year)
         )
-        ArtSpaceButton(modifier = Modifier.padding(50.dp))
+        Spacer(modifier = Modifier.height(50.dp))
+
+        ArtSpaceButton(
+                modifier = Modifier
+                    .padding(50.dp)
+                    //.align()
+            )
     }
 }
 
@@ -76,17 +84,19 @@ fun ArtSpaceImageAndDescription(
 //    artName: String,
 //    artistName: String,
 //    artYear: Int
+    modifier: Modifier = Modifier
 ) {
     Surface(
         modifier = Modifier
             .height(420.dp)
             .width(320.dp)
             .padding(5.dp),
-        color = Color(0xFF585656),
+        color = Color(0xD3D3D3),
         //border = BorderStroke(),
         tonalElevation = 5.dp,
         shadowElevation = 5.dp,
         //shape = RoundedCornerShape(20.dp)
+
     ) {
         Column(
             verticalArrangement = Arrangement.Center,
@@ -101,6 +111,60 @@ fun ArtSpaceImageAndDescription(
         }
     }
 }
+//@Composable
+//fun ArtSpaceApp(modifier: Modifier = Modifier) {
+//    Column(
+//        modifier = Modifier
+//            .fillMaxSize(),
+//       verticalArrangement = Arrangement.Center,
+//        horizontalAlignment = Alignment.CenterHorizontally,
+//    ) {
+//        ArtSpaceImageAndDescription(
+//            imagePainter = painterResource(R.drawable.monalisa)
+//        )
+//        Spacer(modifier = Modifier.height(100.dp))
+//        Artist(
+//            modifier = Modifier.padding(bottom = 40.dp),
+//            artName = stringResource(R.string.art_1_name),
+//            artist = stringResource(R.string.art_1_artist),
+//            artYear = stringResource(R.string.art_1_year)
+//        )
+//        ArtSpaceButton(modifier = Modifier.padding(50.dp))
+//    }
+//}
+//
+//@Composable
+//fun ArtSpaceImageAndDescription(
+//    imagePainter: Painter,
+////    artName: String,
+////    artistName: String,
+////    artYear: Int
+//) {
+//    Surface(
+//        modifier = Modifier
+//            .height(420.dp)
+//            .width(320.dp)
+//            .padding(5.dp),
+//        color = Color(0xFF585656),
+//        //border = BorderStroke(),
+//        tonalElevation = 5.dp,
+//        shadowElevation = 5.dp,
+//        //shape = RoundedCornerShape(20.dp)
+//    ) {
+//        Column(
+//            verticalArrangement = Arrangement.Center,
+//            horizontalAlignment = Alignment.CenterHorizontally,
+//        ) {
+//            Image(
+//                painter = imagePainter,
+//                contentDescription = null,
+//                modifier = Modifier
+//                    .size(350.dp)
+//            )
+//        }
+//    }
+//}
+
 
 @Composable
 fun Artist(
@@ -111,7 +175,7 @@ fun Artist(
 ) {
     Column(
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(text = artName)
         Text(text = artist)
@@ -123,12 +187,15 @@ fun Artist(
 fun ArtSpaceButton(modifier: Modifier = Modifier) {
     Row(
         verticalAlignment = Alignment.Bottom,
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.SpaceAround,
+        //modifier = Modifier.fillMaxSize()
     ) {
         Button(onClick = { /*TODO*/ }) {
+            modifier.size(40.dp)
             Text(stringResource(R.string.previous_button))
         }
         Button(onClick = { /*TODO*/ }) {
+            modifier.size(60.dp)
             Text(stringResource(R.string.next_button))
         }
     }
