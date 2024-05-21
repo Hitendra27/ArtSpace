@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -28,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.BlendMode.Companion.Color
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -60,7 +62,7 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         ArtSpaceImageAndDescription(
-            imagePainter = painterResource(R.drawable.monalisa)
+            imagePainter = painterResource(R.drawable.adele_bloch)
         )
         Spacer(modifier = Modifier.height(50.dp))
         Artist(
@@ -106,8 +108,12 @@ fun ArtSpaceImageAndDescription(
             Image(
                 painter = imagePainter,
                 contentDescription = null,
+                //contentScale = ContentScale.,
                 modifier = Modifier
-                    .size(350.dp)
+                    .size(275.dp)
+                    .fillMaxHeight()
+                    //.fillMaxWidth()
+                    //.fillMaxSize()
             )
         }
     }
