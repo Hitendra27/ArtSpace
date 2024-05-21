@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -188,14 +189,14 @@ fun ArtSpaceButton(modifier: Modifier = Modifier) {
     Row(
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.SpaceAround,
-        //modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxWidth()
     ) {
-        Button(onClick = { /*TODO*/ }) {
-            modifier.size(40.dp)
+        Button(onClick = { /*TODO*/ },
+            modifier = Modifier.height(35.dp).width(150.dp)) {
             Text(stringResource(R.string.previous_button))
         }
-        Button(onClick = { /*TODO*/ }) {
-            modifier.size(60.dp)
+        Button(onClick = { /*TODO*/ },
+            modifier = Modifier.height(35.dp).width(150.dp)) {
             Text(stringResource(R.string.next_button))
         }
     }
