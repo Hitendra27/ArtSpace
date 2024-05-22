@@ -62,7 +62,7 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         ArtSpaceImageAndDescription(
-            imagePainter = painterResource(R.drawable.adele_bloch)
+            imagePainter = painterResource(R.drawable.the_laughing_cavalier)
         )
         Spacer(modifier = Modifier.height(50.dp))
         Artist(
@@ -87,7 +87,7 @@ fun ArtSpaceImageAndDescription(
 //    artName: String,
 //    artistName: String,
 //    artYear: Int
-    modifier: Modifier = Modifier
+      modifier: Modifier = Modifier
 ) {
     Surface(
         modifier = Modifier
@@ -108,12 +108,14 @@ fun ArtSpaceImageAndDescription(
             Image(
                 painter = imagePainter,
                 contentDescription = null,
-                //contentScale = ContentScale.,
+                contentScale = ContentScale
+                    .FillBounds,
+                //contentScale = ContentScale.FillHeight,
                 modifier = Modifier
-                    .size(275.dp)
-                    .fillMaxHeight()
-                    //.fillMaxWidth()
-                    //.fillMaxSize()
+                    //.size(220.dp)
+                    .height(320.dp)
+                    .width(240.dp)
+                    .fillMaxWidth()
             )
         }
     }
