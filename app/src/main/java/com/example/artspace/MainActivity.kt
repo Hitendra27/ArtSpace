@@ -62,7 +62,7 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         ArtSpaceImageAndDescription(
-            imagePainter = painterResource(R.drawable.the_laughing_cavalier)
+            imagePainter = painterResource(R.drawable.monalisa)
         )
         Spacer(modifier = Modifier.height(50.dp))
         Artist(
@@ -76,7 +76,6 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
         ArtSpaceButton(
                 modifier = Modifier
                     .padding(50.dp)
-                    //.align()
             )
     }
 }
@@ -110,9 +109,7 @@ fun ArtSpaceImageAndDescription(
                 contentDescription = null,
                 contentScale = ContentScale
                     .FillBounds,
-                //contentScale = ContentScale.FillHeight,
                 modifier = Modifier
-                    //.size(220.dp)
                     .height(320.dp)
                     .width(240.dp)
                     .fillMaxWidth()
@@ -120,61 +117,6 @@ fun ArtSpaceImageAndDescription(
         }
     }
 }
-//@Composable
-//fun ArtSpaceApp(modifier: Modifier = Modifier) {
-//    Column(
-//        modifier = Modifier
-//            .fillMaxSize(),
-//       verticalArrangement = Arrangement.Center,
-//        horizontalAlignment = Alignment.CenterHorizontally,
-//    ) {
-//        ArtSpaceImageAndDescription(
-//            imagePainter = painterResource(R.drawable.monalisa)
-//        )
-//        Spacer(modifier = Modifier.height(100.dp))
-//        Artist(
-//            modifier = Modifier.padding(bottom = 40.dp),
-//            artName = stringResource(R.string.art_1_name),
-//            artist = stringResource(R.string.art_1_artist),
-//            artYear = stringResource(R.string.art_1_year)
-//        )
-//        ArtSpaceButton(modifier = Modifier.padding(50.dp))
-//    }
-//}
-//
-//@Composable
-//fun ArtSpaceImageAndDescription(
-//    imagePainter: Painter,
-////    artName: String,
-////    artistName: String,
-////    artYear: Int
-//) {
-//    Surface(
-//        modifier = Modifier
-//            .height(420.dp)
-//            .width(320.dp)
-//            .padding(5.dp),
-//        color = Color(0xFF585656),
-//        //border = BorderStroke(),
-//        tonalElevation = 5.dp,
-//        shadowElevation = 5.dp,
-//        //shape = RoundedCornerShape(20.dp)
-//    ) {
-//        Column(
-//            verticalArrangement = Arrangement.Center,
-//            horizontalAlignment = Alignment.CenterHorizontally,
-//        ) {
-//            Image(
-//                painter = imagePainter,
-//                contentDescription = null,
-//                modifier = Modifier
-//                    .size(350.dp)
-//            )
-//        }
-//    }
-//}
-
-
 @Composable
 fun Artist(
     artName: String,
