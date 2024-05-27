@@ -23,6 +23,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,9 +36,11 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.artspace.ui.theme.ArtSpaceTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,27 +59,67 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun ArtSpaceApp() {
+    ArtSpaceImageAndText(
+        imagePainter = painterResource(R.drawable.monalisa),
+        artName = stringResource(R.string.art_1_name),
+        artist = stringResource(R.string.art_1_artist),
+        artYear = stringResource(R.string.art_1_year)
+    )
+}
+
 
 @Composable
-fun ArtSpaceApp(modifier: Modifier = Modifier) {
+fun ArtSpaceImageAndText(
+    modifier: Modifier = Modifier,
+    imagePainter: Painter,
+    artName: String,
+    artist: String,
+    artYear: String,
+    onClink: () -> Unit = {}) {
+
+    var result by remember { mutableStateOf(1) }
+    val imageResourc = when (result) {
+        1 -> ArtSpaceImageAndText(
+            imagePainter = painterResource(R.drawable.monalisa),
+            artName = stringResource(R.string.art_1_name),
+            artist = stringResource(R.string.art_1_artist),
+            artYear = stringResource(R.string.art_1_year)
+        )
+        2 -> ArtSpaceImageAndText(
+            imagePainter = ,
+            artName = ,
+            artist = ,
+            artYear = )
+        3 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
+        4 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
+        5 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
+        6 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
+        7 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
+        8 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
+        9 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
+        else -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
+    }
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         ArtSpaceImageAndDescription(
-            imagePainter = painterResource(R.drawable.monalisa)
+            imagePainter = imagePainter
         )
         Spacer(modifier = Modifier.height(50.dp))
         Artist(
             modifier = Modifier.padding(bottom = 40.dp),
-            artName = stringResource(R.string.art_1_name),
-            artist = stringResource(R.string.art_1_artist),
-            artYear = stringResource(R.string.art_1_year)
+            artName = artName,
+            artist = artist,
+            artYear = artYear
         )
         Spacer(modifier = Modifier.height(50.dp))
 
         ArtSpaceButton(
+                onClick = { result},
                 modifier = Modifier
                     .padding(50.dp)
             )
@@ -90,8 +136,8 @@ fun ArtSpaceImageAndDescription(
 ) {
     Surface(
         modifier = Modifier
-            .height(420.dp)
-            .width(320.dp)
+            .height(470.dp)
+            .width(380.dp)
             .padding(5.dp),
         color = Color(0xD3D3D3),
         //border = BorderStroke(),
@@ -103,6 +149,7 @@ fun ArtSpaceImageAndDescription(
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.fillMaxWidth()
         ) {
             Image(
                 painter = imagePainter,
@@ -110,8 +157,8 @@ fun ArtSpaceImageAndDescription(
                 contentScale = ContentScale
                     .FillBounds,
                 modifier = Modifier
-                    .height(320.dp)
-                    .width(240.dp)
+                    .height(390.dp)
+                    .width(310.dp)
                     .fillMaxWidth()
             )
         }
@@ -128,25 +175,41 @@ fun Artist(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(text = artName)
-        Text(text = artist)
-        Text(text = artYear)
+        Text(
+            text = artName,
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.displayMedium
+        )
+        Text(
+            text = artist,
+            style = MaterialTheme.typography.displayLarge
+        )
+        Text(
+            text = artYear,
+            style = MaterialTheme.typography.labelSmall
+        )
     }
 }
 
 @Composable
-fun ArtSpaceButton(modifier: Modifier = Modifier) {
+fun ArtSpaceButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier) {
     Row(
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.SpaceAround,
         modifier = Modifier.fillMaxWidth()
     ) {
-        Button(onClick = { /*TODO*/ },
-            modifier = Modifier.height(35.dp).width(150.dp)) {
+        Button(onClick = { onClick },
+            modifier = Modifier
+                .height(35.dp)
+                .width(150.dp)) {
             Text(stringResource(R.string.previous_button))
         }
-        Button(onClick = { /*TODO*/ },
-            modifier = Modifier.height(35.dp).width(150.dp)) {
+        Button(onClick = { onClick },
+            modifier = Modifier
+                .height(35.dp)
+                .width(150.dp)) {
             Text(stringResource(R.string.next_button))
         }
     }
