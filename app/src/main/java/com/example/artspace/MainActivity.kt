@@ -108,17 +108,95 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
             artYear = artYear
         )
         Spacer(modifier = Modifier.height(50.dp))
-        Row {
+        Row (
+            verticalAlignment = Alignment.Bottom,
+            horizontalArrangement = Arrangement.SpaceAround,
+            modifier = Modifier.fillMaxWidth()
+        ){
+            // Previous Button
+            Button(
+                onClick = { },
+                modifier = Modifier
+                    .height(35.dp)
+                    .width(150.dp)
+            ) {
+                Text(stringResource(R.string.previous_button))
+
+            }
+
+            // Next Button
+            Button(onClick = {
+                             when (currentArtwork) {
+                                 firstArtwork -> {
+                                     currentArtwork = secondArtwork
+                                     artName = R.string.art_2_name
+                                     artist = R.string.art_2_artist
+                                     artYear = R.string.art_2_year
+                                 }
+                                 secondArtwork -> {
+                                     currentArtwork = thirdArtwork
+                                     artName = R.string.art_3_name
+                                     artist = R.string.art_3_artist
+                                     artYear = R.string.art_3_year
+                                 }
+                                 thirdArtwork -> {
+                                     currentArtwork = fourthArtwork
+                                     artName = R.string.art_4_name
+                                     artist = R.string.art_4_artist
+                                     artYear = R.string.art_4_year
+                                 }
+                                 fourthArtwork -> {
+                                     currentArtwork = fifthArtwork
+                                     artName = R.string.art_5_name
+                                     artist = R.string.art_5_artist
+                                     artYear = R.string.art_5_year
+                                 }
+                                 fifthArtwork -> {
+                                     currentArtwork = sixthArtwork
+                                     artName = R.string.art_6_name
+                                     artist = R.string.art_6_artist
+                                     artYear = R.string.art_6_year
+                                 }
+                                 sixthArtwork -> {
+                                     currentArtwork = seventhArtwork
+                                     artName = R.string.art_7_name
+                                     artist = R.string.art_7_artist
+                                     artYear = R.string.art_7_year
+                                 }
+                                 seventhArtwork -> {
+                                     currentArtwork = eightArtwork
+                                     artName = R.string.art_8_name
+                                     artist = R.string.art_8_artist
+                                     artYear = R.string.art_8_year
+                                 }
+                                 eightArtwork -> {
+                                     currentArtwork = ninthArtwork
+                                     artName = R.string.art_9_name
+                                     artist = R.string.art_9_artist
+                                     artYear = R.string.art_9_year
+                                 }
+                                 ninthArtwork -> {
+                                     currentArtwork = tenthArtwork
+                                     artName = R.string.art_10_name
+                                     artist = R.string.art_10_artist
+                                     artYear = R.string.art_10_year
+                                 }
+                                 else -> {
+                                     currentArtwork = firstArtwork
+                                     artName = R.string.art_1_name
+                                     artist = R.string.art_1_artist
+                                     artYear = R.string.art_1_year
+                                 }
+                             }
+            },
+                modifier = Modifier
+                    .height(35.dp)
+                    .width(150.dp)) {
+                Text(stringResource(R.string.next_button))
+            }
 
         }
-        Button(onClick = {  },
-            modifier = Modifier
-                .height(35.dp)
-                .width(150.dp)) {
-            Text(stringResource(R.string.previous_button))
-
     }
-
 }
 
 @Composable
@@ -216,4 +294,3 @@ fun GreetingPreview() {
         ArtSpaceApp()
     }
   }
-}
