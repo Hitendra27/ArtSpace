@@ -3,6 +3,7 @@ package com.example.artspace
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -61,31 +62,43 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun ArtSpaceApp() {
-    ArtSpaceImageAndText(
-        imagePainter = painterResource(R.drawable.monalisa),
-        artName = stringResource(R.string.art_1_name),
-        artist = stringResource(R.string.art_1_artist),
-        artYear = stringResource(R.string.art_1_year)
-    )
-}
+fun ArtSpaceApp(modifier: Modifier = Modifier) {
+    val firstArtwork = R.drawable.monalisa
+    val secondArtwork = R.drawable.portrait_of_dr__gachet
+    val thirdArtwork = R.drawable.napoleon_crossing_the_alps
+    val fourthArtwork = R.drawable.american_gothic
+    val fifthArtwork = R.drawable.the_laughing_cavalier
+    val sixthArtwork = R.drawable.self_portiat
+    val seventhArtwork = R.drawable.girl_with_the_earring
+    val eightArtwork = R.drawable.adele_bloch
+    val ninthArtwork = R.drawable.madam_x
+    val tenthArtwork = R.drawable.pablo_picasso
 
+    var artName by remember { mutableStateOf(R.string.art_1_name) }
 
-@Composable
-fun ArtSpaceImageAndText(
-    modifier: Modifier = Modifier,
-    imagePainter: Painter,
-    artName: String,
-    artist: String,
-    artYear: String,
-    onClink: () -> Unit = {}) {
+    var artist by remember {
+        mutableStateOf(R.string.art_1_artist)
+    }
+
+    var currentArtwork by remember {
+        mutableStateOf(firstArtwork)
+    }
+
+    var artYear by remember {
+        mutableStateOf(R.string.art_1_year)
+    }
+
+    var imageResource by remember {
+        mutableStateOf(currentArtwork)
+    }
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        ArtSpaceImageAndDescription(
-            imagePainter = imagePainter
+        ArtSpaceImage(
+            currentArtwork = currentArtwork
         )
         Spacer(modifier = Modifier.height(50.dp))
         Artist(
@@ -95,22 +108,23 @@ fun ArtSpaceImageAndText(
             artYear = artYear
         )
         Spacer(modifier = Modifier.height(50.dp))
+        Row {
 
-        ArtSpaceButton(
-                onClick = {},
-                modifier = Modifier
-                    .padding(50.dp)
-            )
+        }
+        Button(onClick = {  },
+            modifier = Modifier
+                .height(35.dp)
+                .width(150.dp)) {
+            Text(stringResource(R.string.previous_button))
+
     }
+
 }
 
 @Composable
-fun ArtSpaceImageAndDescription(
-    imagePainter: Painter,
-//    artName: String,
-//    artistName: String,
-//    artYear: Int
-      modifier: Modifier = Modifier
+fun ArtSpaceImage(
+    @DrawableRes currentArtwork: Int,
+    modifier: Modifier = Modifier
 ) {
     Surface(
         modifier = Modifier
@@ -130,7 +144,7 @@ fun ArtSpaceImageAndDescription(
             modifier = Modifier.fillMaxWidth()
         ) {
             Image(
-                painter = imagePainter,
+                painter = painterResource(currentArtwork),
                 contentDescription = null,
                 contentScale = ContentScale
                     .FillBounds,
@@ -142,11 +156,12 @@ fun ArtSpaceImageAndDescription(
         }
     }
 }
+
 @Composable
 fun Artist(
-    @StringRes artName: String,
-    @StringRes artist: String,
-    @StringRes artYear: String,
+    @StringRes artName: Int,
+    @StringRes artist: Int,
+    @StringRes artYear: Int,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -154,16 +169,16 @@ fun Artist(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
-            text = artName,
+            text = stringResource(id = artName),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.displayMedium
         )
         Text(
-            text = artist,
+            text = stringResource(id = artist),
             style = MaterialTheme.typography.displayLarge
         )
         Text(
-            text = artYear,
+            text = stringResource(id = artYear),
             style = MaterialTheme.typography.labelSmall
         )
     }
@@ -172,7 +187,8 @@ fun Artist(
 @Composable
 fun ArtSpaceButton(
     onClick: () -> Unit,
-    modifier: Modifier = Modifier) {
+    modifier: Modifier = Modifier
+) {
     Row(
         verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.SpaceAround,
@@ -199,4 +215,5 @@ fun GreetingPreview() {
     ArtSpaceTheme {
         ArtSpaceApp()
     }
+  }
 }
