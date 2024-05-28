@@ -3,6 +3,7 @@ package com.example.artspace
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -78,29 +79,6 @@ fun ArtSpaceImageAndText(
     artist: String,
     artYear: String,
     onClink: () -> Unit = {}) {
-
-    var result by remember { mutableStateOf(1) }
-    val imageResourc = when (result) {
-        1 -> ArtSpaceImageAndText(
-            imagePainter = painterResource(R.drawable.monalisa),
-            artName = stringResource(R.string.art_1_name),
-            artist = stringResource(R.string.art_1_artist),
-            artYear = stringResource(R.string.art_1_year)
-        )
-        2 -> ArtSpaceImageAndText(
-            imagePainter = ,
-            artName = ,
-            artist = ,
-            artYear = )
-        3 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
-        4 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
-        5 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
-        6 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
-        7 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
-        8 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
-        9 -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
-        else -> ArtSpaceImageAndText(imagePainter = , artName = , artist = , artYear = )
-    }
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -119,7 +97,7 @@ fun ArtSpaceImageAndText(
         Spacer(modifier = Modifier.height(50.dp))
 
         ArtSpaceButton(
-                onClick = { result},
+                onClick = {},
                 modifier = Modifier
                     .padding(50.dp)
             )
@@ -166,9 +144,9 @@ fun ArtSpaceImageAndDescription(
 }
 @Composable
 fun Artist(
-    artName: String,
-    artist: String,
-    artYear: String,
+    @StringRes artName: String,
+    @StringRes artist: String,
+    @StringRes artYear: String,
     modifier: Modifier = Modifier
 ) {
     Column(
