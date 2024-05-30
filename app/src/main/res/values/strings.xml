@@ -8,45 +8,45 @@
     <string name="art_1_year">1506</string>
     <string name="art_1_location">Louvre Museum, Paris, France</string>
 
-    <string name="art_2_name">Portrait of Dr. Gachet</string>
-    <string name="art_2_artist">Vincent van Gogh</string>
-    <string name="art_2_year">1890</string>
-    <string name="art_2_location">Musée d’Orsay, Paris, France</string>
+    <string name="art_2_name">American Gothic</string>
+    <string name="art_2_artist">Grant Wood</string>
+    <string name="art_2_year">1930</string>
+    <string name="art_2_location">Art Institute of Chicago, Chicago, USA</string>
 
-    <string name="art_3_name">Napoleon Crossing the Alps</string>
-    <string name="art_3_artist">Jacques-Louis David</string>
-    <string name="art_3_year">1801</string>
-    <string name="art_3_location">Château de Malmaison, Rueil-Malmaison, France</string>
+    <string name="art_3_name">Adele Bloch Bauer I</string>
+    <string name="art_3_artist">Gustav Klimt</string>
+    <string name="art_3_year">1907</string>
+    <string name="art_3_location">Neue Galerie, New York City</string>
 
-    <string name="art_4_name">American Gothic</string>
-    <string name="art_4_artist">Grant Wood</string>
-    <string name="art_4_year">1930</string>
-    <string name="art_4_location">Art Institute of Chicago, Chicago, USA</string>
+    <string name="art_4_name">Napoleon Arch the Alps</string>
+    <string name="art_4_artist">Jacques-Louis David</string>
+    <string name="art_4_year">1801</string>
+    <string name="art_4_location">Château de Malmaison, Rueil-Malmaison, France</string>
 
-    <string name="art_5_name">The Laughing Cavalier</string>
-    <string name="art_5_artist">Frans Hals</string>
-    <string name="art_5_year">1624</string>
-    <string name="art_5_location">Wallace Collection, London, UK</string>
+    <string name="art_5_name">Girl with a Pearl Earring</string>
+    <string name="art_5_artist">Johannes Vermeer</string>
+    <string name="art_5_year">1665</string>
+    <string name="art_5_location">Mauritshuis, The Hague</string>
 
     <string name="art_6_name">Self-Portrait</string>
     <string name="art_6_artist">Rembrandt van Rijn</string>
     <string name="art_6_year">1660</string>
     <string name="art_6_location">Metropolitan Museum of Art, New York City</string>
 
-    <string name="art_7_name">Girl with a Pearl Earring</string>
-    <string name="art_7_artist">Johannes Vermeer</string>
-    <string name="art_7_year">1665</string>
-    <string name="art_7_location">Mauritshuis, The Hague</string>
+    <string name="art_7_name">Portrait of Madame X</string>
+    <string name="art_7_artist">John Singer Sargent</string>
+    <string name="art_7_year">1884</string>
+    <string name="art_7_location">Metropolitan Museum of Art, New York City</string>
 
-    <string name="art_8_name">Portrait of Adele Bloch Bauer I</string>
-    <string name="art_8_artist">Gustav Klimt</string>
-    <string name="art_8_year">1907</string>
-    <string name="art_8_location">Neue Galerie, New York City</string>
+    <string name="art_8_name">Portrait of Dr. Gachet</string>
+    <string name="art_8_artist">Vincent van Gogh</string>
+    <string name="art_8_year">1890</string>
+    <string name="art_8_location">Musée d’Orsay, Paris, France</string>
 
-    <string name="art_9_name">Portrait of Madame X</string>
-    <string name="art_9_artist">John Singer Sargent</string>
-    <string name="art_9_year">1884</string>
-    <string name="art_9_location">Metropolitan Museum of Art, New York City</string>
+    <string name="art_9_name">The Laughing Cavalier</string>
+    <string name="art_9_artist">Frans Hals</string>
+    <string name="art_9_year">1624</string>
+    <string name="art_9_location">Wallace Collection, London, UK</string>
 
     <string name="art_10_name">Le Réve</string>
     <string name="art_10_artist">Pablo Picasso</string>

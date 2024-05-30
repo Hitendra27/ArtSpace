@@ -56,14 +56,14 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun ArtSpaceApp(modifier: Modifier = Modifier) {
     val firstArtwork = R.drawable.monalisa
-    val secondArtwork = R.drawable.portrait_of_dr__gachet
-    val thirdArtwork = R.drawable.napoleon_crossing_the_alps
-    val fourthArtwork = R.drawable.american_gothic
-    val fifthArtwork = R.drawable.the_laughing_cavalier
+    val secondArtwork = R.drawable.american_gothic
+    val thirdArtwork = R.drawable.adele_bloch
+    val fourthArtwork = R.drawable.napoleon_crossing_the_alps
+    val fifthArtwork = R.drawable.girl_with_the_earring
     val sixthArtwork = R.drawable.self_portiat
-    val seventhArtwork = R.drawable.girl_with_the_earring
-    val eightArtwork = R.drawable.adele_bloch
-    val ninthArtwork = R.drawable.madam_x
+    val seventhArtwork = R.drawable.madam_x
+    val eightArtwork = R.drawable.portrait_of_dr__gachet
+    val ninthArtwork = R.drawable.the_laughing_cavalier
     val tenthArtwork = R.drawable.pablo_picasso
 
     var artName by remember { mutableStateOf(R.string.art_1_name) }
@@ -79,10 +79,6 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
     var artYear by remember {
         mutableStateOf(R.string.art_1_year)
     }
-
-//    var imageResource by remember {
-//        mutableStateOf(currentArtwork)
-//    }
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -109,62 +105,62 @@ fun ArtSpaceApp(modifier: Modifier = Modifier) {
             Button(
                 onClick = {
                           when (currentArtwork) {
-                              ninthArtwork -> {
+                              firstArtwork -> {
                                   currentArtwork = tenthArtwork
                                   artName = R.string.art_10_name
                                   artist = R.string.art_10_artist
                                   artYear = R.string.art_10_year
                               }
-                              eightArtwork -> {
+                              tenthArtwork -> {
                                   currentArtwork = ninthArtwork
                                   artName = R.string.art_9_name
                                   artist = R.string.art_9_artist
                                   artYear = R.string.art_9_year
                               }
 
-                              seventhArtwork -> {
+                              ninthArtwork -> {
                                   currentArtwork = eightArtwork
                                   artName = R.string.art_8_name
                                   artist = R.string.art_8_artist
                                   artYear = R.string.art_8_year
                               }
 
-                              sixthArtwork -> {
+                              eightArtwork -> {
                                   currentArtwork = seventhArtwork
                                   artName = R.string.art_7_name
                                   artist = R.string.art_7_artist
                                   artYear = R.string.art_7_year
                               }
 
-                              fifthArtwork -> {
+                              seventhArtwork -> {
                                   currentArtwork = sixthArtwork
                                   artName = R.string.art_6_name
                                   artist = R.string.art_6_artist
                                   artYear = R.string.art_6_year
                               }
 
-                              fourthArtwork -> {
+                              sixthArtwork -> {
                                   currentArtwork = fifthArtwork
                                   artName = R.string.art_5_name
                                   artist = R.string.art_5_artist
                                   artYear = R.string.art_5_year
                               }
 
-                              thirdArtwork -> {
+                              fifthArtwork -> {
                                   currentArtwork = fourthArtwork
                                   artName = R.string.art_4_name
                                   artist = R.string.art_4_artist
                                   artYear = R.string.art_4_year
                               }
 
-                              secondArtwork-> {
+                              fourthArtwork-> {
                                   currentArtwork = thirdArtwork
                                   artName = R.string.art_3_name
                                   artist = R.string.art_3_artist
                                   artYear = R.string.art_3_year
                               }
 
-                              fifthArtwork -> {
+                              thirdArtwork -> {
                                   currentArtwork = secondArtwork
                                   artName = R.string.art_2_name
                                   artist = R.string.art_2_artist
