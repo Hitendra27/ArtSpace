@@ -30,9 +30,12 @@ To get started with the Art Space App:
 3. Build and run the app on an Android emulator or physical device.
 4. Explore the app and immerse yourself in the world of art!
 
-## Screenshots
-<img width="407" alt="Screenshot 2024-05-21 at 21 53 56" src="https://github.com/Hitendra27/ArtSpace/assets/73651340/d38ad4df-7093-4618-9d82-f1efd8b0bbae">
-
+## Screenshots of the Art Space App
+<img width="381" alt="Screenshot 2024-06-28 at 12 42 29" src="https://github.com/Hitendra27/ArtSpace/assets/73651340/8dd8630a-fa97-48a1-ac59-15f0ccb44ab2">
+<img width="400" alt="Screenshot 2024-06-28 at 12 42 44" src="https://github.com/Hitendra27/ArtSpace/assets/73651340/7034751e-380a-498c-ad4a-1d1e6c471123">
+<img width="387" alt="Screenshot 2024-06-28 at 12 42 53" src="https://github.com/Hitendra27/ArtSpace/assets/73651340/3f5f5634-e949-4168-87a0-912c61033078">
+<img width="383" alt="Screenshot 2024-06-28 at 12 43 14" src="https://github.com/Hitendra27/ArtSpace/assets/73651340/b4f5ceff-6421-41c1-8dfd-89723577ab25">
+<img width="384" alt="Screenshot 2024-06-28 at 12 43 03" src="https://github.com/Hitendra27/ArtSpace/assets/73651340/a1897162-ccd0-415e-88aa-048333e60694">
 
 ## Contributing
 
